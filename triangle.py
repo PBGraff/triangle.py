@@ -252,8 +252,8 @@ def corner(xs, bins=20, range=None, weights=None, color="k",
         if show_titles:
             # Compute the quantiles for the title. This might redo
             # unneeded computation but who cares.
-            q_16, q_50, q_84 = quantile(x, [0.16, 0.5, 0.84], weights=weights)
-            q_m, q_p = q_50-q_16, q_84-q_50
+            q_05, q_50, q_95 = quantile(x, [0.05, 0.50, 0.95], weights=weights)
+            q_m, q_p = q_50-q_05, q_95-q_50
 
             # Format the quantile display.
             fmt = "{{0:{0}}}".format(title_fmt).format
